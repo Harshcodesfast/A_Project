@@ -15,14 +15,14 @@ if (module.hot) {
 }
 
 // loading screen
-recipeView.renderSpinner();
+
 // Fetch a recipe from the API
 const showRecipe = async function () {
   try {
     const id = window.location.hash.slice(1);
     if (!id) return;
     //loading screen
-    if (!id) recipeView.renderSpinner();
+    recipeView.renderSpinner();
     resultsView.update(model.getSearchResults());
     bookmarksView.update(model.state.bookmarks);
     //loading recipe
