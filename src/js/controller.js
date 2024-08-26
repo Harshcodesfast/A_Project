@@ -3,7 +3,6 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import recipeView from './views/recipeview.js';
 import searchView from './views/searchView.js';
-import View from './views/view.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
@@ -36,7 +35,7 @@ const showRecipe = async function () {
   }
 };
 
-const controlSearchResuts = async function () {
+const controlSearchResults = async function () {
   try {
     const query = searchView.getQuery();
     if (!query) return;
@@ -91,7 +90,7 @@ const init = function () {
   recipeView.addHandlerRenderer(showRecipe);
   recipeView.addHandlerUpdateServings(controlSurvings);
   recipeView.addHandlerBookmark(controlAddBookmark);
-  searchView.addHandlerSearch(controlSearchResuts);
+  searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addrecipeView.addhandlerUpload(controlAddRecipe);
 };
