@@ -22,7 +22,7 @@ const showRecipe = async function () {
     const id = window.location.hash.slice(1);
     if (!id) return;
     //loading screen
-    recipeView.renderSpinner();
+    if (!id) recipeView.renderSpinner();
     resultsView.update(model.getSearchResults());
     bookmarksView.update(model.state.bookmarks);
     //loading recipe
